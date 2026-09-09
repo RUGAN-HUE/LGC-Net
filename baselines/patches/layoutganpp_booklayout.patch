@@ -1,0 +1,35 @@
+diff --git a/data/base.py b/data/base.py
+--- a/data/base.py
++++ b/data/base.py
+@@ -14,5 +14,5 @@ class BaseDataset(InMemoryDataset):
+         assert split in ['train', 'val', 'test']
+         super().__init__(f'data/dataset/{name}/', transform)
+         idx = self.processed_file_names.index('{}.pt'.format(split))
+-        self.data, self.slices = torch.load(self.processed_paths[idx])
++        self.data, self.slices = torch.load(self.processed_paths[idx], weights_only=False)
+ 
+diff --git a/data/publaynet.py b/data/publaynet.py
+--- a/data/publaynet.py
++++ b/data/publaynet.py
+@@ -52,7 +52,7 @@ class PubLayNet(BaseDataset):
+                 elements = _elements
+ 
+                 N = len(elements)
+-                if N == 0 or 9 < N:
++                if N == 0 or 26 < N:
+                     continue
+ 
+                 boxes = []
+diff --git a/metric.py b/metric.py
+--- a/metric.py
++++ b/metric.py
+@@ -20,6 +20,7 @@ class LayoutFID():
+         # load pre-trained LayoutNet
+         tmpl = './pretrained/layoutnet_{}.pth.tar'
+-        state_dict = torch.load(tmpl.format(dataset_name), map_location=device)
+-        self.model.load_state_dict(state_dict)
++        # The book-cover experiments do not report Layout FID. The unavailable
++        # external FID checkpoint is therefore not used for model selection.
++        state_dict = None
+         self.model.requires_grad_(False)
+         self.model.eval()

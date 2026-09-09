@@ -11,6 +11,7 @@
     "stage2_validation": 174,
     "test": 194
   },
+  "sequence_overflow_policy": "retain_first_15_elements_in_stored_record_order",
   "model": {
     "d_model": 128,
     "nhead": 4,
@@ -49,4 +50,3 @@
     "early_stop_patience": 5
   }
 }
-

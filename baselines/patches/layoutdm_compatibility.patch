@@ -1,0 +1,21 @@
+diff --git a/src/trainer/trainer/datasets/base.py b/src/trainer/trainer/datasets/base.py
+--- a/src/trainer/trainer/datasets/base.py
++++ b/src/trainer/trainer/datasets/base.py
+@@ -24,4 +24,4 @@ class BaseDataset(InMemoryDataset):
+ 
+         with fsspec.open(self.processed_paths[idx], "rb") as file_obj:
+-            self.data, self.slices = torch.load(file_obj)
++            self.data, self.slices = torch.load(file_obj, weights_only=False)
+ 
+diff --git a/src/trainer/trainer/helpers/scheduler.py b/src/trainer/trainer/helpers/scheduler.py
+--- a/src/trainer/trainer/helpers/scheduler.py
++++ b/src/trainer/trainer/helpers/scheduler.py
+@@ -4,7 +4,7 @@
+ import math
+ from functools import partial
+ 
+ import torch
+-from torch._six import inf
++from math import inf
+ from torch.optim.optimizer import Optimizer
+ 

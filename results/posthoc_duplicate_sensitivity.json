@@ -1,0 +1,21 @@
+{
+  "status": "post-hoc sensitivity check; not the original manuscript run archive",
+  "scope": "Five later LGC-Net verification checkpoints evaluated before and after removing the two test records identified as same-cover cross-split duplicates",
+  "affected_test_sample_ids": ["BLB-92CD19611D69000C", "BLB-E117693F316F8DE9"],
+  "full_test": {
+    "records": 194,
+    "iou_mean": 0.1972602,
+    "iou_sample_standard_deviation": 0.0060459,
+    "max_iou_mean": 0.2471019,
+    "max_iou_sample_standard_deviation": 0.0030690
+  },
+  "filtered_test": {
+    "records": 192,
+    "iou_mean": 0.1962624,
+    "iou_sample_standard_deviation": 0.0059804,
+    "max_iou_mean": 0.2462595,
+    "max_iou_sample_standard_deviation": 0.0027626
+  },
+  "filtered_minus_full": {"iou": -0.0009978, "max_iou": -0.0008424},
+  "interpretation": "The effect is small on the later verification checkpoints, but this analysis is not a substitute for retraining the original manuscript runs and must not be presented as such."
+}

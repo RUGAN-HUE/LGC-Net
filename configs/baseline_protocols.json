@@ -1,0 +1,79 @@
+{
+  "shared_data": {
+    "label_mapping": {
+      "Title": "Title",
+      "Subtitle": "Text",
+      "Author": "Text",
+      "Publisher": "Text",
+      "Endorsement": "Text",
+      "Series": "Text",
+      "Main_Image": "Figure",
+      "Logo": "List",
+      "Badge": "List"
+    },
+    "test_split_records": 194,
+    "training_source": "BookLayout-Bi fixed non-test records",
+    "external_pretrained_weights": false
+  },
+  "LayoutVAE": {
+    "upstream_repository": "https://github.com/kampta/DeepLayout",
+    "upstream_commit": "60ebaca7f29a14d92c455f83e681c0bd8e2962fe",
+    "upstream_license": "Apache-2.0",
+    "implementation_directory": "layout_vae",
+    "reported_runs": 5,
+    "test_records": 194,
+    "inference_condition": "element labels only; latent sampled from N(0, I)"
+  },
+  "LayoutTransformer": {
+    "upstream_repository": "https://github.com/kampta/DeepLayout",
+    "upstream_commit": "60ebaca7f29a14d92c455f83e681c0bd8e2962fe",
+    "upstream_license": "Apache-2.0",
+    "implementation_directory": "layout_transformer",
+    "epochs": 300,
+    "batch_size": 64,
+    "learning_rate_argument": 4.5e-06,
+    "layers": 6,
+    "attention_heads": 8,
+    "embedding_dimension": 512,
+    "precision_bits": 8,
+    "reported_runs": 5,
+    "test_records": 194,
+    "inference": "greedy coordinate-token decoding with forced element-label tokens"
+  },
+  "LayoutGAN++": {
+    "upstream_repository": "https://github.com/ktrk115/const_layout",
+    "upstream_commit": "5287480505939345543fff0b9f2e5d541e6f84e2",
+    "upstream_license": "AGPL-3.0",
+    "iterations": 100000,
+    "batch_size": 64,
+    "latent_size": 4,
+    "learning_rate": 1e-05,
+    "generator_d_model": 256,
+    "generator_heads": 4,
+    "generator_layers": 8,
+    "discriminator_d_model": 256,
+    "discriminator_heads": 4,
+    "discriminator_layers": 8,
+    "reported_converged_runs": 4,
+    "reported_run_seeds": [2, 3, 42, 8120],
+    "documented_failed_or_incomplete_runs": [0, 1],
+    "test_records": 193,
+    "test_exclusion": "The upstream PubLayNet loader removes one landscape cover with H < W."
+  },
+  "LayoutDM": {
+    "upstream_repository": "https://github.com/CyberAgentAILab/layout-dm",
+    "upstream_commit": "873b5eebe4c61862e5c08a10859accf65a168dfd",
+    "upstream_license": "Apache-2.0",
+    "experiment": "layoutdm",
+    "dataset_adapter": "publaynet",
+    "max_sequence_length": 25,
+    "epochs": 50,
+    "batch_size": 64,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0005,
+    "diffusion_steps": 100,
+    "reported_runs": 3,
+    "test_records": 193,
+    "test_exclusion": "The upstream PubLayNet loader removes one landscape cover with H < W."
+  }
+}

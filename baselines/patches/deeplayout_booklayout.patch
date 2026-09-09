@@ -1,0 +1,39 @@
+diff --git a/layout_transformer/main.py b/layout_transformer/main.py
+index 1810ec2..9bcc88f 100644
+--- a/layout_transformer/main.py
++++ b/layout_transformer/main.py
+@@ -28,7 +28,7 @@ if __name__ == "__main__":
+ 
+     # Architecture/training options
+     parser.add_argument("--seed", type=int, default=42, help="random seed")
+-    parser.add_argument("--epochs", type=int, default=10, help="number of epochs")
++    parser.add_argument("--epochs", type=int, default=300, help="number of epochs")
+     parser.add_argument("--batch_size", type=int, default=64, help="batch size")
+     parser.add_argument("--lr", type=float, default=4.5e-06, help="learning rate")
+     parser.add_argument('--n_layer', default=6, type=int)
+diff --git a/layout_transformer/utils.py b/layout_transformer/utils.py
+index ae31752..2a80f5a 100644
+--- a/layout_transformer/utils.py
++++ b/layout_transformer/utils.py
+@@ -38,7 +38,7 @@ def sample(model, x, steps, temperature=1.0, sample=False, top_k=None):
+     has quadratic complexity unlike an RNN that is only linear, and has a finite context window
+     of block_size, unlike an RNN that has an infinite context window.
+     """
+-    block_size = model.module.get_block_size() if hasattr(model, "module") else model.getcond_block_size()
++    block_size = model.module.get_block_size() if hasattr(model, "module") else model.get_block_size()
+     model.eval()
+     for k in range(steps):
+         x_cond = x if x.size(1) <= block_size else x[:, -block_size:]  # crop context if needed
+diff --git a/layout_vae/layout.py b/layout_vae/layout.py
+index 70a90a9..76a230c 100644
+--- a/layout_vae/layout.py
++++ b/layout_vae/layout.py
+@@ -132,7 +132,7 @@ class LayoutDataset(Dataset):
+                 label[annotation_index] = contiguous_id
+                 annotation_id[annotation_index] = annotation["id"]
+ 
+-            permutation = np.array([a["index"] for a in sorted_annotations]).astype(np.int)
++            permutation = np.array([a["index"] for a in sorted_annotations]).astype(int)
+ 
+             label_sets.append(label_set)
+             counts.append(count)
