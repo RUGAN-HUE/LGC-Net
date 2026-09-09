@@ -1,0 +1,66 @@
+{
+  "status": "values reported in the final manuscript",
+  "notes": [
+    "Mean and sample standard deviation are reported across the stated runs.",
+    "LayoutGAN++ and LayoutDM had one or more non-converged runs or missing paired samples, as disclosed in the manuscript.",
+    "The full-system comparison uses each method's supported input setting; it is not an architecture-only comparison."
+  ],
+  "methods": [
+    {
+      "method": "LayoutVAE",
+      "runs": 5,
+      "covers": 194,
+      "overlap": [0.0049, 0.0039],
+      "max_overlap": [0.0534, 0.0414],
+      "alignment": [0.0617, 0.0152],
+      "violation_percent": [2.43, 1.47],
+      "iou": [0.0109, 0.0056],
+      "max_iou": [0.0295, 0.0131]
+    },
+    {
+      "method": "LayoutGAN++",
+      "runs": 4,
+      "covers": 193,
+      "overlap": [0.0298, 0.0040],
+      "max_overlap": [0.3327, 0.0315],
+      "alignment": [0.0707, 0.0011],
+      "violation_percent": [5.24, 1.10],
+      "iou": [0.1142, 0.0038],
+      "max_iou": [0.1980, 0.0030]
+    },
+    {
+      "method": "LayoutTransformer",
+      "runs": 5,
+      "covers": 194,
+      "overlap": [0.0694, 0.0092],
+      "max_overlap": [0.5059, 0.0599],
+      "alignment": [0.0181, 0.0034],
+      "violation_percent": [3.73, 2.17],
+      "iou": [0.1566, 0.0031],
+      "max_iou": [0.1913, 0.0030]
+    },
+    {
+      "method": "LayoutDM",
+      "runs": 3,
+      "covers": 193,
+      "overlap": [0.0236, 0.0007],
+      "max_overlap": [0.2163, 0.0109],
+      "alignment": [0.0707, 0.0013],
+      "violation_percent": [4.83, 0.04],
+      "iou": [0.0998, 0.0025],
+      "max_iou": [0.1834, 0.0030]
+    },
+    {
+      "method": "LGC-Net (M-32-G)",
+      "runs": 5,
+      "covers": 194,
+      "overlap": [0.0228, 0.0010],
+      "max_overlap": [0.2047, 0.0132],
+      "alignment": [0.0538, 0.0028],
+      "violation_percent": [0.00, 0.00],
+      "iou": [0.2027, 0.0044],
+      "max_iou": [0.2500, 0.0028]
+    }
+  ]
+}
+

@@ -1,0 +1,64 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Datasets and images
+data/
+datasets/
+images/
+raw/
+private/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+*.webp
+*.tif
+*.tiff
+
+# Models and large binary artifacts
+checkpoints/
+weights/
+runs/
+outputs/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pkl
+*.npz
+*.zip
+*.7z
+*.rar
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Editors and operating systems
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Manuscripts, presentations, backups, and temporary files
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.pdf
+*.bak
+*.tmp
+*.log
+~$*
+

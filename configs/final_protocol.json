@@ -1,0 +1,52 @@
+{
+  "protocol_name": "M-32-G",
+  "description": "Mixed two-stage protocol, Gaussian prior, latent dimension 32",
+  "split_seed": 42,
+  "evaluation_seed": 42,
+  "training_seeds": [0, 1, 2, 3, 4],
+  "expected_split_counts": {
+    "stage1_train": 8971,
+    "stage1_validation": 996,
+    "stage2_train": 1572,
+    "stage2_validation": 174,
+    "test": 194
+  },
+  "model": {
+    "d_model": 128,
+    "nhead": 4,
+    "latent_dim": 32,
+    "num_encoder_layers": 3,
+    "num_decoder_layers": 4,
+    "max_seq_len": 15
+  },
+  "stage1": {
+    "batch_size": 64,
+    "epochs": 60,
+    "learning_rate": 0.001,
+    "weight_decay": 0.00001,
+    "dropout": 0.1,
+    "kl_max_weight": 0.3,
+    "kl_warmup_epochs": 15,
+    "kl_free_bits": 0.05,
+    "reconstruction_weight": 1.0,
+    "overlap_weight": 0.1,
+    "structure_weight": 0.05,
+    "scheduler_eta_min": 0.00001
+  },
+  "stage2": {
+    "batch_size": 32,
+    "epochs": 30,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.00001,
+    "dropout": 0.15,
+    "kl_max_weight": 0.2,
+    "kl_warmup_epochs": 5,
+    "kl_free_bits": 0.05,
+    "reconstruction_weight": 1.0,
+    "overlap_weight": 0.1,
+    "structure_weight": 0.05,
+    "scheduler_eta_min": 0.000001,
+    "early_stop_patience": 5
+  }
+}
+
