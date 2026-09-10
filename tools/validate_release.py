@@ -85,6 +85,27 @@ def main() -> None:
     assert "repository-code: \"https://github.com/RUGAN-HUE/LGC-Net\"" in citation
     assert "doi:" not in citation.lower()
     assert "date-released:" not in citation.lower()
+    with (root / ".zenodo.json").open("r", encoding="utf-8") as stream:
+        zenodo = json.load(stream)
+    assert zenodo["title"] == (
+        "LGC-Net: Lightweight Book Cover Layout Generation for On-Premises Publishing Design"
+    )
+    assert zenodo["version"] == "1.0.0"
+    assert zenodo["upload_type"] == "software"
+    assert zenodo["access_right"] == "open"
+    assert zenodo["license"] == "polyform-noncommercial-1.0.0"
+    assert zenodo["creators"] == [
+        {"name": "Zhu, Lei"},
+        {"name": "Li, Jiahao"},
+        {"name": "Xue, Xiaoyan"},
+        {"name": "Zhang, Yuan"},
+    ]
+    assert "does not contain original book-cover image pixels" in zenodo["description"]
+    assert "CC BY-NC 4.0" in zenodo["description"]
+    assert "Apache-2.0 or AGPL-3.0" in zenodo["description"]
+    readme = (root / "README.md").read_text(encoding="utf-8")
+    assert "[`.zenodo.json`](.zenodo.json) supplies Zenodo-compatible" in readme
+    assert "`.zenodo.json` supplies Zenodo-compatible software and license metadata" in license_scope
 
     model = LGCNet(**protocol["model"])
     total_parameters = sum(parameter.numel() for parameter in model.parameters())

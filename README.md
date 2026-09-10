@@ -2,7 +2,7 @@
 
 LGC-Net is a lightweight conditional variational autoencoder for editable book-cover layout generation. This repository contains the standalone model, the final M-32-G two-stage training protocol, unified metrics, baseline adapters, and machine-readable reported results.
 
-The repository metadata describe version 1.0.0. Citation metadata are provided in [`CITATION.cff`](CITATION.cff); the persistent DOI will be added after the GitHub release has been archived.
+The repository metadata describe version 1.0.0. Citation metadata are provided in [`CITATION.cff`](CITATION.cff), and [`.zenodo.json`](.zenodo.json) supplies Zenodo-compatible software and license metadata. The persistent DOI will be added after the GitHub release has been archived.
 
 ## Repository contents
 

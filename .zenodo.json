@@ -1,0 +1,30 @@
+{
+  "title": "LGC-Net: Lightweight Book Cover Layout Generation for On-Premises Publishing Design",
+  "description": "LGC-Net is a lightweight conditional variational autoencoder for editable book-cover layout generation in on-premises publishing design. This archive contains the standalone model implementation, the final M-32-G two-stage protocol, training and evaluation utilities, unified metrics, baseline adapters and patches, and machine-readable reported results. It does not contain original book-cover image pixels, model checkpoints, third-party source repositories, or unpublished negative-space experiments. Author-created software is licensed under PolyForm Noncommercial 1.0.0; author-created documentation and result summaries are licensed under CC BY-NC 4.0; third-party-derived patches retain their upstream Apache-2.0 or AGPL-3.0 terms. See LICENSE_SCOPE.md for the file-specific boundaries.",
+  "creators": [
+    {
+      "name": "Zhu, Lei"
+    },
+    {
+      "name": "Li, Jiahao"
+    },
+    {
+      "name": "Xue, Xiaoyan"
+    },
+    {
+      "name": "Zhang, Yuan"
+    }
+  ],
+  "version": "1.0.0",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "polyform-noncommercial-1.0.0",
+  "language": "eng",
+  "keywords": [
+    "layout generation",
+    "book cover",
+    "conditional variational autoencoder",
+    "non-autoregressive decoding",
+    "on-premises deployment"
+  ]
+}
