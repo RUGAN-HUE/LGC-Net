@@ -3,6 +3,8 @@ message: "If you use LGC-Net, please cite this software release and the associat
 title: "LGC-Net: Lightweight Book Cover Layout Generation for On-Premises Publishing Design"
 type: software
 version: "1.0.0"
+doi: "10.5281/zenodo.22684889"
+date-released: "2026-09-10"
 authors:
   - family-names: Zhu
     given-names: Lei

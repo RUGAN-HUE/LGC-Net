@@ -83,8 +83,8 @@ def main() -> None:
     assert 'version: "1.0.0"' in citation
     assert "license: PolyForm-Noncommercial-1.0.0" in citation
     assert "repository-code: \"https://github.com/RUGAN-HUE/LGC-Net\"" in citation
-    assert "doi:" not in citation.lower()
-    assert "date-released:" not in citation.lower()
+    assert 'doi: "10.5281/zenodo.22684889"' in citation
+    assert 'date-released: "2026-09-10"' in citation
     with (root / ".zenodo.json").open("r", encoding="utf-8") as stream:
         zenodo = json.load(stream)
     assert zenodo["title"] == (
@@ -94,6 +94,7 @@ def main() -> None:
     assert zenodo["upload_type"] == "software"
     assert zenodo["access_right"] == "open"
     assert zenodo["license"] == "polyform-noncommercial-1.0.0"
+    assert "doi" not in zenodo
     assert zenodo["creators"] == [
         {"name": "Zhu, Lei"},
         {"name": "Li, Jiahao"},
@@ -105,6 +106,8 @@ def main() -> None:
     assert "Apache-2.0 or AGPL-3.0" in zenodo["description"]
     readme = (root / "README.md").read_text(encoding="utf-8")
     assert "[`.zenodo.json`](.zenodo.json) supplies Zenodo-compatible" in readme
+    assert "10.5281/zenodo.22684889" in readme
+    assert "10.5281/zenodo.22684888" in readme
     assert "`.zenodo.json` supplies Zenodo-compatible software and license metadata" in license_scope
 
     model = LGCNet(**protocol["model"])

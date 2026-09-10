@@ -14,6 +14,6 @@
 - [x] Exact upstream baseline commits were audited against the retained local experiment copies.
 - [x] LayoutGAN++ and LayoutDM 193-versus-194 test coverage is represented by stable sample identifiers.
 - [x] Noncommercial software, documentation, result-summary, and third-party patch license scopes are explicit.
-- [x] `CITATION.cff` contains version 1.0.0 metadata without an unissued DOI or release date.
+- [x] `CITATION.cff` contains the issued version 1.0.0 DOI and release date.
 - [x] `.zenodo.json` explicitly registers the archive as software, uses Zenodo's validated PolyForm Noncommercial identifier, and preserves the documentation/result and third-party patch boundaries in its description.
 - [x] Public-release content review is complete; changing repository visibility remains an author-only step.

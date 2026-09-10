@@ -28,4 +28,4 @@ No original book-cover pixels, private checkpoints, credentials, or unpublished 
 
 ## Scholarly attribution
 
-Compliance with the software license does not replace normal scholarly citation. Publications using this repository should cite the associated LGC-Net paper and the archived software release once its persistent identifier is available. Version 1.0.0 citation metadata are provided in `CITATION.cff`, and `.zenodo.json` supplies Zenodo-compatible software and license metadata.
+Compliance with the software license does not replace normal scholarly citation. Publications using this repository should cite the associated LGC-Net paper and the archived v1.0.0 software release using its version DOI, [`10.5281/zenodo.22684889`](https://doi.org/10.5281/zenodo.22684889). Version 1.0.0 citation metadata are provided in `CITATION.cff`, and `.zenodo.json` supplies Zenodo-compatible software and license metadata.
