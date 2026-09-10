@@ -78,6 +78,13 @@ def main() -> None:
     third_party_notice = (root / "docs" / "THIRD_PARTY_NOTICE.md").read_text(encoding="utf-8")
     assert "Copyright 2023 Naoto Inoue" in third_party_notice
     assert "2026-09-10" in third_party_notice
+    citation = (root / "CITATION.cff").read_text(encoding="utf-8")
+    assert "cff-version: 1.2.0" in citation
+    assert 'version: "1.0.0"' in citation
+    assert "license: PolyForm-Noncommercial-1.0.0" in citation
+    assert "repository-code: \"https://github.com/RUGAN-HUE/LGC-Net\"" in citation
+    assert "doi:" not in citation.lower()
+    assert "date-released:" not in citation.lower()
 
     model = LGCNet(**protocol["model"])
     total_parameters = sum(parameter.numel() for parameter in model.parameters())

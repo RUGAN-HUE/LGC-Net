@@ -5,5 +5,6 @@
 *.txt text eol=lf
 *.csv text eol=lf
 *.patch text eol=lf
+*.cff text eol=lf
 LICENSE text eol=lf
 NOTICE text eol=lf

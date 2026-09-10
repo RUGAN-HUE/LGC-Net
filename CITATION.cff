@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use LGC-Net, please cite this software release and the associated paper. File-specific license boundaries are documented in LICENSE_SCOPE.md."
+title: "LGC-Net: Lightweight Book Cover Layout Generation for On-Premises Publishing Design"
+type: software
+version: "1.0.0"
+authors:
+  - family-names: Zhu
+    given-names: Lei
+  - family-names: Li
+    given-names: Jiahao
+  - family-names: Xue
+    given-names: Xiaoyan
+  - family-names: Zhang
+    given-names: Yuan
+repository-code: "https://github.com/RUGAN-HUE/LGC-Net"
+url: "https://github.com/RUGAN-HUE/LGC-Net"
+license: PolyForm-Noncommercial-1.0.0
+keywords:
+  - layout generation
+  - book cover
+  - conditional variational autoencoder
+  - non-autoregressive decoding
+  - on-premises deployment

@@ -125,7 +125,7 @@ def maximum_iou(
     return float(np.mean(matched_scores)) if matched_scores else 0.0
 
 
-# Backward-compatible function names used by the private scripts.
+# Backward-compatible function names used by the original experiment scripts.
 calculate_iou_or_overlap = intersection_over_union
 evaluate_comprehensive_metrics = layout_metrics
 evaluate_real_iou = elementwise_iou

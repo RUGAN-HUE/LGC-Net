@@ -1,6 +1,6 @@
 """LGC-Net model used in the final five-seed experiments.
 
-The architecture matches the private ``layout_model_v6b.py`` implementation:
+The architecture matches the original ``layout_model_v6b.py`` experiment implementation:
 nine role embeddings, subject and language conditions, a 32-dimensional CVAE
 latent variable, and a non-autoregressive Transformer decoder.
 """
@@ -180,5 +180,5 @@ class LGCNet(nn.Module):
         return self.decode(latent, labels, subject_ids, language_ids, mask)
 
 
-# Backward-compatible name used by the private experiment scripts.
+# Backward-compatible name used by the original experiment scripts.
 LGC_Net_V6b = LGCNet

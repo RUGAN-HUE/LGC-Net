@@ -14,4 +14,5 @@
 - [x] Exact upstream baseline commits were audited against the retained local experiment copies.
 - [x] LayoutGAN++ and LayoutDM 193-versus-194 test coverage is represented by stable sample identifiers.
 - [x] Noncommercial software, documentation, result-summary, and third-party patch license scopes are explicit.
-- [ ] Repository remains private until the author approves publication.
+- [x] `CITATION.cff` contains version 1.0.0 metadata without an unissued DOI or release date.
+- [x] Public-release content review is complete; changing repository visibility remains an author-only step.

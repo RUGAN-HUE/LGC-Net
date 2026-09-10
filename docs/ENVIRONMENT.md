@@ -1,6 +1,6 @@
 # Verified local environment
 
-The preparation copy was checked with the following locally installed environment:
+The release package was checked with the following locally installed environment:
 
 - Python 3.12.10
 - PyTorch 2.11.0+cu128

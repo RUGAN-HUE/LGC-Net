@@ -1,8 +1,8 @@
 # LGC-Net
 
-> Preparation copy: this repository is private and is not yet ready for public release.
-
 LGC-Net is a lightweight conditional variational autoencoder for editable book-cover layout generation. This repository contains the standalone model, the final M-32-G two-stage training protocol, unified metrics, baseline adapters, and machine-readable reported results.
+
+The repository metadata describe version 1.0.0. Citation metadata are provided in [`CITATION.cff`](CITATION.cff); the persistent DOI will be added after the GitHub release has been archived.
 
 ## Repository contents
 
@@ -52,7 +52,7 @@ Training is intentionally not launched by the verification command because the f
 
 ## Release boundary
 
-This repository will not include original cover images, credentials, private paths, virtual environments, checkpoints by default, unpublished negative-space experiments, or complete copies of third-party baseline repositories.
+This repository does not include original cover images, credentials, private paths, virtual environments, checkpoints, unpublished negative-space experiments, or complete copies of third-party baseline repositories.
 
 The separately maintained BookLayout-Bi repository contains only structured annotations, hashes, and fixed split identifiers. Original cover pixels are not needed by this coordinate-only generation pipeline.
 
