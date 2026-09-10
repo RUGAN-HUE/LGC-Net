@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -27,6 +28,12 @@ FORBIDDEN_SUFFIXES = {
     ".ppt", ".pptx", ".pdf", ".key", ".pem", ".p12", ".pfx",
 }
 TEXT_SUFFIXES = {".py", ".md", ".json", ".txt", ".patch", ".gitattributes", ".gitignore"}
+EXPECTED_LICENSE_SHA256 = {
+    "LICENSE": "ff67ab0c08d545dc4e5dac0f072807eb6c5002c1ed1c3de7093e1eaa0b02d298",
+    "LICENSES/CC-BY-NC-4.0.txt": "3711f963c05d0be80d53e5923308a6dee31b203da23435c9cfb7c7b6e4dd5e19",
+    "LICENSES/Apache-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LICENSES/AGPL-3.0.txt": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+}
 SENSITIVE = re.compile(
     r"(?:[A-Za-z]:\\(?:Users|PycharmProjects)\\|/home/|/Users/|"
     r"ghp_[A-Za-z0-9]+|github_pat_[A-Za-z0-9_]+|sk-[A-Za-z0-9]{20,}|"
@@ -61,6 +68,16 @@ def main() -> None:
     assert methods["LGC-Net (M-32-G)"]["iou"] == [0.2027, 0.0044]
     assert methods["LGC-Net (M-32-G)"]["max_iou"] == [0.2500, 0.0028]
     assert methods["LayoutTransformer"]["iou"] == [0.1566, 0.0031]
+
+    for relative_path, expected_digest in EXPECTED_LICENSE_SHA256.items():
+        assert hashlib.sha256((root / relative_path).read_bytes()).hexdigest() == expected_digest
+    assert "PolyForm Noncommercial License 1.0.0" in (root / "LICENSE").read_text(encoding="utf-8")
+    license_scope = (root / "LICENSE_SCOPE.md").read_text(encoding="utf-8")
+    assert "grants no permission for commercial use" in license_scope
+    assert "layoutganpp_booklayout.patch`" in license_scope
+    third_party_notice = (root / "docs" / "THIRD_PARTY_NOTICE.md").read_text(encoding="utf-8")
+    assert "Copyright 2023 Naoto Inoue" in third_party_notice
+    assert "2026-09-10" in third_party_notice
 
     model = LGCNet(**protocol["model"])
     total_parameters = sum(parameter.numel() for parameter in model.parameters())

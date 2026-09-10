@@ -58,4 +58,6 @@ The separately maintained BookLayout-Bi repository contains only structured anno
 
 ## License
 
-The code license will be selected after author and institutional confirmation. No license is granted by this preparation copy.
+The author-created software is available for noncommercial use under the PolyForm Noncommercial License 1.0.0. Author-created documentation and result summaries are available under CC BY-NC 4.0. Commercial use is not licensed.
+
+Third-party-derived patch files retain their corresponding upstream licenses. See [LICENSE_SCOPE.md](LICENSE_SCOPE.md), [NOTICE](NOTICE), and [docs/THIRD_PARTY_NOTICE.md](docs/THIRD_PARTY_NOTICE.md) for the exact boundaries. No license in this repository applies to original book-cover artwork or other third-party content.
